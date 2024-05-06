@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js" defer></script>
         <link rel="stylesheet" href="style.css">
         <title>Title</title>
     </head>
@@ -29,9 +30,25 @@
             <section class="wrapper-body">
                 <div class="col"><h1>Lobe</h1><h1 class="text-clr-600">Tour</h1></div>
                 <div class="col"><p>Build your first machine learning model in ten minutes. No code or experience required.</p></div>
-                <div class="col"><iframe width="560" height="315" src="https://www.youtube.com/embed/Mdcw3Sb98DA?si=7S2cISYFoz-j7bzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-                <div class="col"><h1>Train your app with Lobe</h1></div>
-                <div class="col"><button type="submit">Download</button></div>
+                <div class="col">
+                    <div class="video-container">
+                        <!-- Placeholder image -->
+                        <div class="video-placeholder"
+                             id="videoPlaceholder"
+                             style="background-image: url('images/Video.jpg');"
+                             title="Click to play"></div>
+                        <!-- Hidden iframe -->
+                        <iframe id="videoIframe"
+                                class="video-iframe"
+                                title="YouTube video player"
+                                src=""
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col"><h1 class="fs-900 fw-900">Train your app with Lobe</h1></div>
+                <div class="col"><button type="submit" class="fw-700 fs-600">Download</button></div>
             </section>
         </main>
         </body>
