@@ -2,8 +2,7 @@
 
 /* ==================================================================== */
 
-:root
-{
+:root {
     --clr-primary-800: #333333;
     --clr-primary-700: #767676;
     --clr-primary-600: #31DDB2;
@@ -25,7 +24,7 @@
     ===================================
           Reset and Global Styles
     ===================================
-    This section contains is an CSS reset.
+    This section contains a CSS reset.
 */
 
 /* Box sizing rules */
@@ -35,8 +34,7 @@
     box-sizing: border-box;
 }
 
-*
-{
+* {
     margin: 0;
     padding: 0;
     font-family: var(--ff-lobe);
@@ -74,8 +72,7 @@ button, input, label {
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1, h2, h3, h4 {
     text-wrap: balance;
 }
 
@@ -146,8 +143,7 @@ textarea:not([rows]) {
 
 /* ---- Header ---- */
 
-.wrapper-nav
-{
+.wrapper-nav {
     width: 100%;
     height: 5rem;
     display: flex;
@@ -162,33 +158,28 @@ textarea:not([rows]) {
     z-index: 99;
 }
 
-.wrapper-nav :is(img)
-{
+.wrapper-nav :is(img) {
     width: 8rem;
 }
 
-.wrapper-nav ul
-{
+.wrapper-nav ul {
     display: flex;
     text-decoration: none;
     gap: var(--gap);
 }
 
-.wrapper-nav :is(a)
-{
+.wrapper-nav :is(a) {
     text-decoration: none;
     transition: transform .5s ease;
 }
 
-.wrapper-nav :is(a):hover
-{
+.wrapper-nav :is(a):hover {
     transform: scale(1.5);
     transition:.5s ease;
     color: var(--clr-primary-800);
 }
 
-.wrapper-nav :is(button)
-{
+.wrapper-nav :is(button) {
     margin-right: 2rem;
     padding: 1rem 1.5rem;
     border-radius: var(--borderradius);
@@ -199,16 +190,14 @@ textarea:not([rows]) {
     cursor: pointer;
 }
 
-.wrapper-nav :is(button):hover
-{
+.wrapper-nav :is(button):hover {
     transform: scale(1.1);
     transition:.5s ease;
 }
 
 /* ---- Main - Elements ---- */
 
-.wrapper-body
-{
+.wrapper-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,13 +206,11 @@ textarea:not([rows]) {
     --borderradius: 2rem;
 }
 
-.col
-{
+.col {
     margin-block: .5rem;
 }
 
-section > :nth-child(1 of .col)
-{
+section > :nth-child(1 of .col) {
     font-size: var(--fs-900);
     font-weight: var(--fw-900);
     display: flex;
@@ -231,35 +218,51 @@ section > :nth-child(1 of .col)
     gap: .5rem;
 }
 
-.wrapper-body :is(p)
-{
+.wrapper-body :is(p) {
     font-size: var(--fs-800);
+}
+
+.wrapper-body :nth-child(3 of .col) {
+    width: 100%;
+    height: 40rem;
+}
+
+.wrapper-body :nth-child(3 of .col) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit the video width */
+    margin: auto;     /* Center the container vertically in the page */
+    height: 100vh;    /* Full viewport height */
 }
 
 .video-container {
     position: relative;
-    width: 1200px;
-    height: 700px;
-    aspect-ratio: 16 / 9;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
 /* Placeholder image */
 .video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 2rem;
-    cursor: pointer;
+    background-image: url("images/Video.jpg");
     background-size: cover;
     background-position: center;
+    margin-inline: auto;
+    border-radius: 2rem;
+    cursor: pointer;
     transition: transform 0.5s ease;
 }
 
-.video-placeholder:hover
-{
+.video-placeholder:hover {
     transform: scale(1.1);
-    transition: .5s ease;
-    filter: drop-shadow(0px 3px 20px #000000);
-
+    transition: 1s ease;
+    filter: drop-shadow(0px 3px 50px #000000);
 }
 
 /* Initially hide the iframe */
@@ -271,20 +274,18 @@ section > :nth-child(1 of .col)
     height: 100%;
     border: none;
     display: none;
+    border-radius: 2rem;
 }
 
-/* Visible iframe */
 .visible {
     display: block;
 }
 
-section > :nth-child(3 of .col)
-{
+section > :nth-child(3 of .col) {
     margin-block: 5rem;
 }
 
-.wrapper-body :is(button)
-{
+.wrapper-body :is(button) {
     margin-right: 2rem;
     padding: 1rem 1.5rem;
     border-radius: var(--borderradius);
@@ -293,4 +294,132 @@ section > :nth-child(3 of .col)
     color: var(--clr-primary-400);
     transition: transform .5s ease;
     cursor: pointer;
+}
+
+hr {
+    width: 70%;
+    margin-inline: auto;
+    margin-block: 10rem;
+    border: .0002em solid var(--clr-primary-700);
+}
+
+/* ==================================================================== */
+
+
+/*
+    ===================================
+                  Footer
+    ===================================
+    This section contains the Footer of the Webpage.
+*/
+
+/* ---- Footer ---- */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 80%;
+    height: 20rem;
+    margin-inline: auto;
+}
+
+footer :is(img) {
+    width: 8rem;
+    image-orientation: initial;
+    justify-self: flex-start;
+    align-self: self-start;
+}
+
+footer :nth-child(5 of .col) {
+    display: flex;
+    gap: 1rem;
+    font-size: var(--fs-800);
+    cursor: pointer;
+    color: var(--clr-primary-400);
+}
+
+footer .social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--clr-primary-600);
+    transition: transform .5s ease;
+}
+
+footer .social:hover {
+    transform: scale(1.1);
+}
+
+footer .col :is(h1) {
+    font-size: var(--fs-600);
+    font-weight: var(--fw-900);
+    text-decoration: none;
+}
+
+footer .col :is(a) {
+    font-size: var(--fs-600);
+    color: var(--clr-primary-700);
+    text-decoration: none;
+}
+
+/* ==================================================================== */
+
+
+/*
+    ===================================
+              Media Queries
+    ===================================
+    This section contains Styling for the Webpage.
+*/
+
+/* ---- @media ---- */
+
+@media (max-width: 1200px) {
+    .wrapper-nav ul {
+        display: none;
+    }
+
+    .wrapper-body :nth-child(3 of .col) {
+        margin-block: 0;
+    }
+
+    footer :nth-child(5 of .col) {
+        flex-direction: column;
+    }
+
+    .wrapper-body {
+        padding: 5rem;
+    }
+}
+
+@media (max-width: 764px) {
+    .wrapper-nav {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .wrapper-body {
+        padding: 2rem;
+    }
+
+    .wrapper-body :nth-child(3 of .col) {
+        margin-block: 0;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        align-content: flex-start;
+        justify-content: center;
+        height: auto;
+    }
+
+    footer :nth-child(5 of .col) {
+        flex-direction: row;
+    }
 }
